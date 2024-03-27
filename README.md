@@ -19,4 +19,6 @@
 
 + Inicie o servidor web e abra o aplicativo em seu navegador.
 
-## 
+## Modelagem Banco de Dados (atual)
+
+![bdmodel](https://github.com/gabrielmesquita7/twitterclone/assets/55333375/88370d89-d4dd-476a-9261-a8083d90e29b)
