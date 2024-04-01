@@ -40,7 +40,7 @@ class AppController extends Action
     {
         $this->validaAutenticacao();
 
-        $pesquisarPor = isset ($_GET['pesquisarPor']) ? $_GET['pesquisarPor'] : '';
+        $pesquisarPor = isset($_GET['pesquisarPor']) ? $_GET['pesquisarPor'] : '';
 
         $usuarios = array();
 
@@ -60,8 +60,8 @@ class AppController extends Action
     {
         $this->validaAutenticacao();
 
-        $acao = isset ($_GET['acao']) ? $_GET['acao'] : '';
-        $id_usuario_seguindo = isset ($_GET['id_usuario']) ? $_GET['id_usuario'] : '';
+        $acao = isset($_GET['acao']) ? $_GET['acao'] : '';
+        $id_usuario_seguindo = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : '';
 
         $usuario = Container::getModel('Usuario');
         $usuario->__set('id', $_SESSION['id']);
@@ -75,11 +75,22 @@ class AppController extends Action
         header('Location: /quem_seguir');
     }
 
+    public function remover()
+    {
+        $this->validaAutenticacao();
+        print_r($_GET);
+        $id_tweet = isset($_GET['id_tweet']) ? $_GET['id_tweet'] : '';
+        $tweet = Container::getModel('Tweet');
+        $tweet->__set('id', $id_tweet);
+        $tweet->removertweet();
+        header('Location: /timeline');
+    }
+
     public function validaAutenticacao()
     {
         session_start();
 
-        if (!isset ($_SESSION['id']) || $_SESSION['id'] == '' || !isset ($_SESSION['nome']) || $_SESSION['nome'] == '') {
+        if (!isset($_SESSION['id']) || $_SESSION['id'] == '' || !isset($_SESSION['nome']) || $_SESSION['nome'] == '') {
             header('Location: /?login=erro');
         } else {
 
