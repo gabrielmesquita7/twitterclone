@@ -13,9 +13,7 @@
 
 + Certifique-se de ter um servidor web (como Apache) configurado em sua máquina.
 
-+ Importe o banco de dados fornecido (database.sql) para o seu servidor MySQL. (ainda configurar)
-
-+ Configure as credenciais do banco de dados no arquivo config.php. (ainda configurar)
++ Importe o banco de dados fornecido (database.sql) para o seu servidor MySQL. 
 
 + Inicie o servidor web e abra o aplicativo em seu navegador.
 
